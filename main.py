@@ -10,7 +10,15 @@ with col1:
 with col2:
     sl.title("Damir Kokic")
     content = """
-    Hi! My name is Damir. I love to program in Python, and you can find some of my projects below. I currently work as
-    a Data Analyst and love to play sports. 
+    Hi! My name is Damir and I love to program in Python. I currently work as a Data Analyst and a hope my journey 
+    inspires anyone reading this. I graduated with a Bachelors in Economics from Jonkoping University, but my main
+    passion has always been Python. That is why I try to combine my love for the language and any job I've held to 
+    this date. 
     """
     sl.info(content)
+
+content2 = """
+You can find some of the applications I built below.
+"""
+
+sl.write(content2)
