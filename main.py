@@ -1,4 +1,5 @@
 import streamlit as sl
+import pandas as pd
 
 sl.set_page_config(layout="wide")
 
@@ -21,3 +22,22 @@ You can find some of the applications I built below.
 """
 
 sl.write(content2)
+
+col3, empty_col, col4 = sl.columns([1.5, 0.5, 1.5])
+
+
+df = pd.read_csv("data.csv", sep=",")
+
+with col3:
+    for index, row in df[:10].iterrows():
+        sl.header(row["title"])
+        sl.write(row["description"])
+        sl.image("006 images/" + row["image"])
+        sl.write(f"[Source Code]({row['url']})")
+
+with col4:
+    for index, row in df[10:].iterrows():
+        sl.header(row["title"])
+        sl.write(row["description"])
+        sl.image("006 images/ " + row["image"])
+        sl.write("[Source Code](https://python.com)")
